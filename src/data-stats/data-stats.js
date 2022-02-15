@@ -1,35 +1,20 @@
 import PropTypes from 'prop-types';
-
-// const DataStats = (title, stats) => (
-//   <section className="statistics">
-//     <h2 className="title">Upload stats</h2>
-//     <ul className="stat-list">
-//       <li className="item">
-//         <span className="label">{data[0].label}</span>
-//         <span className="percentage">{data[0].percentage}</span>
-//       </li>
-//       <li className="item">
-//         <span className="label">{data[1].label}</span>
-//         <span className="percentage">{data[1].percentage}</span>
-//       </li>
-//       <li className="item">
-//         <span className="label">{data[2].label}</span>
-//         <span className="percentage">{data[2].percentage}</span>
-//       </li>
-//       <li className="item">
-//         <span className="label">{data[3].label}</span>
-//         <span className="percentage">{data[3].percentage}</span>
-//       </li>
-//     </ul>
-//   </section>
-// );
+import styles from './data-stats.module.css';
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 const DataStats = ({ title, stats }) => {
   return (
-    <section className="">
-      <h2 className="">{title}</h2>
-      <ul className="">
+    <section className={styles.statistics}>
+      <h2 className={styles.title}>{title}</h2>
+      <ul className={styles.statList }>
         {stats.map(item => (
-          <li key={item.id} class="">
+          <li key={item.id} className={styles.item } style={{backgroundColor: getRandomColor(item) }}>
             <span className="">{item.label}</span>
             <span className="">{item.percentage}%</span>
           </li>
