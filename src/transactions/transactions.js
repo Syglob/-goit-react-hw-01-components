@@ -1,31 +1,30 @@
-
-const TransactionHistory = (props) => {
-    const { transactions } = props;
-    return (
-        <div className="transaction-history">
-        <h2>Transaction History</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Type</th>
-                <th>Amount</th>
-                        <th>Currency</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {transactions.map(transaction => (
-                        <tr key={transaction.id}>  
-                            <td>{transaction.type}</td>
-                            <td>{transaction.amount}</td>
-                            <td>{transaction.currency}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+import styles from './transactions.module.css';
+//
+const TransactionHistory = props => {
+  const { transactions } = props;
+  return (
+    <div className={styles.transactionHistory}>
+      <h2 className={styles.tittle}>Transaction History</h2>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
+          <tr className={styles.trHead}>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Currency</th>
+          </tr>
+        </thead>
+        <tbody className={styles.tbody}>
+          {transactions.map(transaction => (
+            <tr key={transaction.id}>
+              <td>{transaction.type}</td>
+              <td>{transaction.amount}</td>
+              <td>{transaction.currency}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default TransactionHistory;
-

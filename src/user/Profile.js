@@ -4,7 +4,12 @@ import styles from './profile.module.css';
 const Profile = ({ avatar, username, tag, location, stats }) => (
   <div className={styles.profile}>
     <div className={styles.description}>
-      <img width="300px" src={avatar} alt="User avatar" className="avatar" />
+      <img
+        width="300px"
+        src={avatar}
+        alt="User avatar"
+        className={styles.avatar}
+      />
       <p className="name">{username}</p>
       <p className="tag">{tag}</p>
       <p className="location">{location}</p>
